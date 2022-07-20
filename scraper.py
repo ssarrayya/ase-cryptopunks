@@ -1,6 +1,6 @@
 import requests
 import json
-import shutil
+import pandas as pd
 from bs4 import BeautifulSoup
 
 
@@ -44,3 +44,6 @@ cryptos = extract_info(html)
 # save results to JSON file
 with open("cryptopunks.json", "w") as f:
     f.write(json.dumps(cryptos, indent=2))
+
+df = pd.read_json(r'C:\web-scraper\cryptopunks.json')
+df.to_csv(r'C:\web-scraper\cryptopunks.csv', index=None)

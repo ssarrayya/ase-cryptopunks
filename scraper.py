@@ -28,7 +28,7 @@ def extract_info(doc):
     for nft in nft_elements:
         # extract the information needed using our observations
         crypto_punks.append({
-            "crypto_punk": nft.text.strip(),
+            "crypto_punk": nft.text.strip().replace("\n", " "),
             "image": nft.find("img")['src']
         })
 

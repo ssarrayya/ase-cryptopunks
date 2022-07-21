@@ -45,5 +45,6 @@ cryptos = extract_info(html)
 with open("cryptopunks.json", "w") as f:
     f.write(json.dumps(cryptos, indent=2))
 
+# convert JSON file to CSV file
 df = pd.read_json(r'C:\web-scraper\cryptopunks.json')
 df.to_csv(r'C:\web-scraper\cryptopunks.csv', index=None)

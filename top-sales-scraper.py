@@ -20,13 +20,13 @@ def extract_info(doc):
     # parse the HTML content with Beautiful Soup
     soup = BeautifulSoup(doc, "html.parser")
 
-    # find all the elements in collections table
+    # find all the elements in parent div
     nft_elements = soup.find_all("div", {"class": "col-md-2 col-sm-3 col-xs-6 container-punk-event-large"})
 
     # iterate through the elements
     crypto_punks = []
     for nft in nft_elements:
-        # extract the information needed using our observations
+        # extract the information needed from our observation of the structure
         crypto_punks.append({
             "crypto_punk": nft.text.strip().replace("\n", " "),
             "image": nft.find("img")['src']

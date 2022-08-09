@@ -27,7 +27,7 @@ def extract_info(doc):
     # iterate through the elements
     crypto_punks = []
     for attribute in punk_attributes:
-        # extract the information needed using our observations
+        # extract the information needed from our observation of the structure
         crypto_punks.append({
             "punk_attribute": attribute.text.strip().replace("\n", " "),
         })
